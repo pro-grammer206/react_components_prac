@@ -3,27 +3,21 @@ import { useState } from 'react';
 import Navbar from './components/Navbar'
 import ImageSlider from './components/ImageSlider';
 import BlogForm from './components/BlogForm';
+import NumbersApi from './components/NumbersApi';
 
 function App() {
+
+  //Component States
   const [toggle,setToggle] = useState(false)
   const [imgToggle,setImgToggle] = useState(false)
   const [formToggle,setFormToggle] = useState(false)
- 
-  const toggleNav = (e)=>{
-    console.log('event triggered')
-    setToggle(!toggle)
-  }
-  const toggleimg = (e)=>{
-    setImgToggle(!imgToggle)
+  const [numToggle,setNumToggle] = useState(false)
+  //toggle methods
+  const toggleNav = (e)=>{setToggle(!toggle)}
+  const toggleimg = (e)=>{setImgToggle(!imgToggle)}
+  const toggleForm = (e)=>{setFormToggle(!formToggle)}
+  const toggleNum = (e)=>{setNumToggle(!numToggle)}
 
-  }
-  const toggleForm = (e)=>[
-    setFormToggle(!formToggle)
-  ]
-  
-
-
-  
   return (
     <div className='main'>
      {!toggle && <button className='btn' onClick={toggleNav}>|||</button>}
@@ -38,6 +32,10 @@ function App() {
           <button className='btn-primary' onClick={toggleForm}>{formToggle ? 'Hide Form':'Show Form'}</button>
           {formToggle && <BlogForm />}
         </section> 
+        <section className='card'>
+        <button className='btn-primary' onClick={toggleNum}>{numToggle ? 'Hide Api':'Show Api'}</button>
+          {numToggle && <NumbersApi />}
+        </section>
     </div>
       
     </div>

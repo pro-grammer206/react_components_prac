@@ -13,6 +13,7 @@
   align-items: center;
   text-align: center;
   width:200px;
+  gap:20px;
 }
 #close{
   font-size: 2em;
@@ -31,6 +32,7 @@ img{
 
 
 .card{
+  margin-top: 20px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -38,6 +40,9 @@ img{
   text-align: center;
   z-index:0;
   
+}
+.card:hover{
+  box-shadow: -10px 10px 5px 9px cornflowerblue;
 }
 .nav{
   margin:0;
@@ -94,27 +99,43 @@ img{
   font-size: 4em;
   color:#333;
 }
-.slide:hover{
-  box-shadow: 2px 3px 4px 5px silver;
-}
+
 .userform{
   display: flex;
   flex-direction: column;
-  border:5px solid black;
   align-items: center;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 20px;
+  transition: 1s;
 }
-label{
 
+h3{
+  font-size: 3em;
 }
+
 textarea{
   resize: none;
 }
 input[type='text'],input[type='email'],input[type='email']{
-  margin: 10px;
+  margin: 10px auto;
+  height: 30px;
+  width:200px;
+  margin-left:20px;
 }
 input[type='submit']{
-  width:50px;
-  margin-top:10px;
+  margin:10px 20px;
+  width: 100px;
+  height:50px;
+  color:white;
+  background-color: teal;
+  border:0;
+  border-radius: 10px;
+  font-size: 1em;
+}
+input[type='submit']:hover{
+  box-shadow: 3px 5px 5px 5px silver;
+}
+label{
+  margin: 20px;
+  font-size: 2em;
 }
